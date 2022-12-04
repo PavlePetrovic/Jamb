@@ -1,13 +1,15 @@
-import Table from "./components/Table/Table";
-
 import styles from './App.module.scss'
+import Table from "./components/Table/Table";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
+    <>
+    <Header />
     <div className={styles.App}>
-      <h1>Jamb</h1>
       <Table />
     </div>
+    </>
   );
 }
 

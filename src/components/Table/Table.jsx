@@ -52,14 +52,7 @@ const Table = () => {
         <tbody>
           <TableRow rowType='1' />
           <TableRow rowType='2' />
-          <TableRow rowType='3' />
-          <TableRow rowType='4' />
-          <TableRow rowType='5' />
-          <TableRow rowType='6' />
           <TableRow rowType='Sum' sum={true}/>
-          <TableRow rowType='MIN' />
-          <TableRow rowType='Max' />
-          <TableRow rowType='Sum' sum={true} />
         </tbody>
       </table>
     </>

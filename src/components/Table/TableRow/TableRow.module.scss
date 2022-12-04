@@ -1,0 +1,28 @@
+.table-row-sum {
+   th {
+      background-color: rgb(190, 190, 190);
+   }
+
+   td {
+      div {
+         input {
+            background-color: rgb(190, 190, 190);
+         }
+      }
+   }
+}
+
+tr {
+   td {
+      div {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         input {
+            border: none;
+            padding: 6px;
+            width: 50px;
+         }
+      }
+   }
+}

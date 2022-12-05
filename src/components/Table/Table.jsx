@@ -50,9 +50,9 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          <TableRow rowType='1' />
-          <TableRow rowType='2' />
-          <TableRow rowType='Sum' sum={true}/>
+          <TableRow rowType='One' rowValue='1' />
+          <TableRow rowType='Two' rowValue='2' />
+          <TableRow rowType='Sum' rowValue='SUM' sum={true}/>
         </tbody>
       </table>
     </>

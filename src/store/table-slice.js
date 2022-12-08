@@ -1,16 +1,86 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const dataArr = [
+   {
+      id: 'colDownRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colUpDownRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colUpRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colAnnounceRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colRandomRowOne',
+      value: null,
+      changed: false
+   }, 
+   {
+      id: 'colHandRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colDownRowTwo',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colUpDownRowTwo',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colUpRowTwo',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colAnnounceRowTwo',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colRandomRowTwo',
+      value: null,
+      changed: false
+   }, 
+   {
+      id: 'colHandRowTwo',
+      value: null,
+      changed: false
+   }
+]
+
 const tableSlice = createSlice({
    name: 'tableData',
    initialState: {
-      isWork: true
+      isWork: true,
+      data: dataArr
    },
    reducers: {
       checkIsItWork(state) {
          state.isWork = !state.isWork
       },
       writeElementId(state, action) {
-         console.log(action.payload);
+         const newCellId = action.payload
+         const activeCell = state.data.find((cellData) => cellData.id === newCellId)
+
+         if (activeCell) {
+            activeCell.value = 5
+            activeCell.changed = true
+         }
       }
    }
 })

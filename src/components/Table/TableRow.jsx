@@ -14,7 +14,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    const CELL_VI_ID = 'colHandRow' + rowType
 
    const onClickGetId = (e) => {
-      dispatch(tableActions.writeElementId(e.target.id))
+      dispatch(tableActions.updateGameData(e.target.id))
    }
 
   return (

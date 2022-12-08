@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const dataArr = [
+const data = [
    {
       id: 'colDownRowOne',
       value: null,
@@ -66,14 +66,10 @@ const dataArr = [
 const tableSlice = createSlice({
    name: 'tableData',
    initialState: {
-      isWork: true,
-      gameData: dataArr
+      gameData: data
    },
    reducers: {
-      checkIsItWork(state) {
-         state.isWork = !state.isWork
-      },
-      writeElementId(state, action) {
+      updateGameData(state, action) {
          const newCellId = action.payload
          const activeCell = state.gameData.find((cellData) => cellData.id === newCellId)
 

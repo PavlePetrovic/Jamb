@@ -1,0 +1,15 @@
+thead {
+   tr {
+      .th-aligner {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 25px;
+      }
+
+      th {
+         padding: 6px;
+         padding-inline: 10px;
+      }
+   }
+}

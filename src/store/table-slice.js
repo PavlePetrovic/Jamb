@@ -67,7 +67,7 @@ const tableSlice = createSlice({
    name: 'tableData',
    initialState: {
       isWork: true,
-      data: dataArr
+      gameData: dataArr
    },
    reducers: {
       checkIsItWork(state) {
@@ -75,7 +75,7 @@ const tableSlice = createSlice({
       },
       writeElementId(state, action) {
          const newCellId = action.payload
-         const activeCell = state.data.find((cellData) => cellData.id === newCellId)
+         const activeCell = state.gameData.find((cellData) => cellData.id === newCellId)
 
          if (activeCell) {
             activeCell.value = 5

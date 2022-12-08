@@ -26,6 +26,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
                type="text" 
                id={CELL_I_ID}
                onClick={onClickGetId}
+               disabled={sum}
             />
          </div>
       </td>
@@ -35,6 +36,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
                type="text" 
                id={CELL_II_ID}
                onClick={onClickGetId}
+               disabled={sum}
             />
          </div>
       </td>
@@ -44,6 +46,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
                type="text" 
                id={CELL_III_ID}
                onClick={onClickGetId}
+               disabled={sum}
             />
          </div>
       </td>
@@ -53,6 +56,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
                type="text" 
                id={CELL_IV_ID}
                onClick={onClickGetId}
+               disabled={sum}
             />
          </div>
       </td>
@@ -62,6 +66,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
                type="text" 
                id={CELL_V_ID}
                onClick={onClickGetId}
+               disabled={sum}
             />
          </div>
       </td>
@@ -71,6 +76,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
                type="text" 
                id={CELL_VI_ID}
                onClick={onClickGetId}
+               disabled={sum}
             />
          </div>
       </td>

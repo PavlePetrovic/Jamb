@@ -8,6 +8,9 @@ const tableSlice = createSlice({
    reducers: {
       checkIsItWork(state) {
          state.isWork = !state.isWork
+      },
+      writeElementId(state, action) {
+         console.log(action.payload);
       }
    }
 })

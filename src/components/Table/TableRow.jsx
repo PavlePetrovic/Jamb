@@ -1,8 +1,10 @@
-import React from 'react'
+import { useDispatch } from 'react-redux';
 
+import { tableActions } from '../../store/table-slice';
 import styles from './TableRow.module.scss'
 
 const TableRow = ({ rowType, rowValue, sum }) => {
+   const dispatch = useDispatch()
 
    const CELL_I_ID = 'colDownRow' + rowType
    const CELL_II_ID = 'colUpDownRow' + rowType
@@ -11,39 +13,65 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    const CELL_V_ID = 'colRandomRow' + rowType
    const CELL_VI_ID = 'colHandRow' + rowType
 
-   console.log(CELL_I_ID, CELL_II_ID, CELL_III_ID, CELL_IV_ID, CELL_V_ID, CELL_VI_ID);
+   const onClickGetId = (e) => {
+      dispatch(tableActions.writeElementId(e.target.id))
+   }
 
   return (
    <tr className={sum ? styles['table-row-sum'] : ''}>
       <th>{rowValue}</th>
       <td>
          <div>
-            <input type="text" id={CELL_I_ID}/>
+            <input 
+               type="text" 
+               id={CELL_I_ID}
+               onClick={onClickGetId}
+            />
          </div>
       </td>
       <td>
          <div>
-            <input type="text" id={CELL_II_ID}/>
+            <input 
+               type="text" 
+               id={CELL_II_ID}
+               onClick={onClickGetId}
+            />
          </div>
       </td>
       <td>
          <div>
-            <input type="text" id={CELL_III_ID}/>
+            <input 
+               type="text" 
+               id={CELL_III_ID}
+               onClick={onClickGetId}
+            />
          </div>
       </td>
       <td>
          <div>
-            <input type="text" id={CELL_IV_ID}/>
+            <input 
+               type="text" 
+               id={CELL_IV_ID}
+               onClick={onClickGetId}
+            />
          </div>
       </td>
       <td>
          <div>
-            <input type="text" id={CELL_V_ID}/>
+            <input 
+               type="text" 
+               id={CELL_V_ID}
+               onClick={onClickGetId}
+            />
          </div>
       </td>
       <td>
          <div>
-            <input type="text" id={CELL_VI_ID}/>
+            <input 
+               type="text" 
+               id={CELL_VI_ID}
+               onClick={onClickGetId}
+            />
          </div>
       </td>
    </tr>

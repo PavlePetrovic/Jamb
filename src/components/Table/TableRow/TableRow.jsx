@@ -4,12 +4,12 @@ import styles from './TableRow.module.scss'
 
 const TableRow = ({ rowType, rowValue, sum }) => {
 
-   const CELL_I_ID = 'colDown' + 'Row' + rowType
-   const CELL_II_ID = 'colUpDown' + 'Row' + rowType
-   const CELL_III_ID = 'colUp' + 'Row' + rowType
-   const CELL_IV_ID = 'colAnnounce' + 'Row' + rowType
-   const CELL_V_ID = 'colRandom' + 'Row' + rowType
-   const CELL_VI_ID = 'colHand' + 'Row' + rowType
+   const CELL_I_ID = 'colDownRow' + rowType
+   const CELL_II_ID = 'colUpDownRow' + rowType
+   const CELL_III_ID = 'colUpRow' + rowType
+   const CELL_IV_ID = 'colAnnounceRow' + rowType
+   const CELL_V_ID = 'colRandomRow' + rowType
+   const CELL_VI_ID = 'colHandRow' + rowType
 
    console.log(CELL_I_ID, CELL_II_ID, CELL_III_ID, CELL_IV_ID, CELL_V_ID, CELL_VI_ID);
 

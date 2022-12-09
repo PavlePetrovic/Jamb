@@ -13,11 +13,9 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    const CELL_V_ID = 'colRandomRow' + rowType
    const CELL_VI_ID = 'colHandRow' + rowType
 
-   const onClickGetId = (e) => {
+   const onClickGetIdHandler = (e) => {
       dispatch(tableActions.updateGameData(e.target.id))
    }
-
-   console.log( CELL_I_ID, CELL_II_ID, CELL_III_ID, CELL_IV_ID, CELL_V_ID, CELL_VI_ID);
 
   return (
    <tr className={sum ? styles['table-row-sum'] : ''}>
@@ -27,7 +25,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
             <input 
                type="text" 
                id={CELL_I_ID}
-               onClick={onClickGetId}
+               onClick={onClickGetIdHandler}
                disabled={sum}
             />
          </div>
@@ -37,7 +35,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
             <input 
                type="text" 
                id={CELL_II_ID}
-               onClick={onClickGetId}
+               onClick={onClickGetIdHandler}
                disabled={sum}
             />
          </div>
@@ -47,7 +45,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
             <input 
                type="text" 
                id={CELL_III_ID}
-               onClick={onClickGetId}
+               onClick={onClickGetIdHandler}
                disabled={sum}
             />
          </div>
@@ -57,7 +55,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
             <input 
                type="text" 
                id={CELL_IV_ID}
-               onClick={onClickGetId}
+               onClick={onClickGetIdHandler}
                disabled={sum}
             />
          </div>
@@ -67,7 +65,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
             <input 
                type="text" 
                id={CELL_V_ID}
-               onClick={onClickGetId}
+               onClick={onClickGetIdHandler}
                disabled={sum}
             />
          </div>
@@ -77,7 +75,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
             <input 
                type="text" 
                id={CELL_VI_ID}
-               onClick={onClickGetId}
+               onClick={onClickGetIdHandler}
                disabled={sum}
             />
          </div>

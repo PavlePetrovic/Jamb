@@ -60,7 +60,37 @@ const data = [
       id: 'colHandRowTwo',
       value: null,
       changed: false
-   }
+   },
+   {
+      id: 'colDownRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colUpDownRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colUpRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colAnnounceRowOne',
+      value: null,
+      changed: false
+   },
+   {
+      id: 'colRandomRowOne',
+      value: null,
+      changed: false
+   }, 
+   {
+      id: 'colHandRowOne',
+      value: null,
+      changed: false
+   },
 ]
 
 const tableSlice = createSlice({

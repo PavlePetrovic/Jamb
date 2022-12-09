@@ -13,7 +13,6 @@ const Table = () => {
         <tbody>
           <TableRow rowType='One' rowValue='1' />
           <TableRow rowType='Two' rowValue='2' />
-          <TableRow rowType='Sum' rowValue='SUM' sum={true}/>
           <TableRow rowType='Three' rowValue='3' />
           <TableRow rowType='Four' rowValue='4' />
           <TableRow rowType='Five' rowValue='5' />

@@ -17,6 +17,8 @@ const TableRow = ({ rowType, rowValue, sum }) => {
       dispatch(tableActions.updateGameData(e.target.id))
    }
 
+   console.log( CELL_I_ID, CELL_II_ID, CELL_III_ID, CELL_IV_ID, CELL_V_ID, CELL_VI_ID);
+
   return (
    <tr className={sum ? styles['table-row-sum'] : ''}>
       <th>{rowValue}</th>

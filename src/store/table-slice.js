@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { data } from './table-data'
 
 const tableSlice = createSlice({
    name: 'tableData',
    initialState: {
-      gameData: data
+      gameData: data,
+      dicesNumber: null,
    },
    reducers: {
       updateGameData(state, action) {
@@ -15,6 +17,10 @@ const tableSlice = createSlice({
             activeCell.value = 5
             activeCell.changed = true
          }
+      },
+      getDicesNumer(state, action) {
+         const newNum = action.payload
+         state.dicesNumber = newNum
       }
    }
 })

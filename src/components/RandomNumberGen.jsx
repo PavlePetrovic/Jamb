@@ -1,4 +1,6 @@
-import React from 'react'
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { tableActions } from '../store/table-slice'
 
 const styleObjP = {
    marginTop: '35px',
@@ -14,11 +16,20 @@ const styleObjD = {
 }
 
 const RandomNumberGen = () => {
+   const dispatch = useDispatch()
+
+   const [number, setNumber] = useState(2)
+
+   const getRandomNumberHandler = () => {
+      const newNum = Math.floor(Math.random() * 17) + 1
+      setNumber(newNum)
+      dispatch(tableActions.getDicesNumer(newNum))
+   }
 
   return (
     <div style={styleObjD}>
-      <p style={styleObjP}>20</p>
-      <button>Get Number</button>
+      <p style={styleObjP}>{number}</p>
+      <button onClick={getRandomNumberHandler}>Get Number</button>
     </div>
   )
 }

@@ -22,62 +22,58 @@ const TableRow = ({ rowType, rowValue, sum }) => {
       <th>{rowValue}</th>
       <td>
          <div>
-            <input 
-               type="text" 
+            <p 
                id={CELL_I_ID}
                onClick={onClickGetIdHandler}
                disabled={sum}
-            />
+            >
+               
+            </p>
          </div>
       </td>
       <td>
          <div>
-            <input 
-               type="text" 
+            <p 
                id={CELL_II_ID}
                onClick={onClickGetIdHandler}
                disabled={sum}
-            />
+            ></p>
          </div>
       </td>
       <td>
          <div>
-            <input 
-               type="text" 
+            <p 
                id={CELL_III_ID}
                onClick={onClickGetIdHandler}
                disabled={sum}
-            />
+            ></p>
          </div>
       </td>
       <td>
          <div>
-            <input 
-               type="text" 
+            <p 
                id={CELL_IV_ID}
                onClick={onClickGetIdHandler}
                disabled={sum}
-            />
+            ></p>
          </div>
       </td>
       <td>
          <div>
-            <input 
-               type="text" 
+            <p 
                id={CELL_V_ID}
                onClick={onClickGetIdHandler}
                disabled={sum}
-            />
+            ></p>
          </div>
       </td>
       <td>
          <div>
-            <input 
-               type="text" 
+            <p 
                id={CELL_VI_ID}
                onClick={onClickGetIdHandler}
                disabled={sum}
-            />
+            ></p>
          </div>
       </td>
    </tr>

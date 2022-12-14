@@ -1,8 +1,10 @@
 import styles from './Die.module.scss'
 
-const Die = () => {
+const Die = ({ num }) => {
   return (
-    <div>Die</div>
+    <div className={styles.die}>
+      <p>{num}</p>
+    </div>
   )
 }
 

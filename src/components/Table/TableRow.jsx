@@ -1,11 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { tableActions } from '../../store/table-slice';
 import styles from './TableRow.module.scss'
 
 const TableRow = ({ rowType, rowValue, sum }) => {
    const dispatch = useDispatch()
-   const diceNumber = useSelector(state => state.tableData.dicesNumber)
 
    const CELL_I_ID = 'colDownRow' + rowType
    const CELL_II_ID = 'colUpDownRow' + rowType
@@ -15,7 +14,6 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    const CELL_VI_ID = 'colHandRow' + rowType
 
    const onClickGetIdHandler = (e) => {
-      e.target.innerText = diceNumber
       dispatch(tableActions.updateGameData(e.target.id))
    }
 

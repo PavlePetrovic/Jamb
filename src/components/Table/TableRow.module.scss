@@ -6,11 +6,10 @@ tr {
          align-items: center;
          
          button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
             height: 30px;
             width: 50px;
+            border: none;
+            background-color: transparent;
          }
       }
    }

@@ -7,9 +7,17 @@
    border-radius: 6px;
    width: 40px;
    height: 40px;
+}
 
-   p {
-      padding-top: 2px;
-      font-size: 20px;
-   }
+.picked-die {
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid black;
+   border-radius: 6px;
+   width: 40px;
+   height: 40px;
+   background-color: tomato;
+   color: white;
 }

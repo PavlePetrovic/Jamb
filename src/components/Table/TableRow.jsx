@@ -1,10 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { tableActions } from '../../store/table-slice';
 import styles from './TableRow.module.scss'
 
 const TableRow = ({ rowType, rowValue, sum }) => {
    const dispatch = useDispatch()
+   const diceSum = useSelector(state => state.tableData.diceSum)
 
    const CELL_I_ID = 'colDownRow' + rowType
    const CELL_II_ID = 'colUpDownRow' + rowType
@@ -14,7 +15,9 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    const CELL_VI_ID = 'colHandRow' + rowType
 
    const onClickGetIdHandler = (e) => {
-      dispatch(tableActions.updateGameData(e.target.id))
+      e.target.disabled = true
+      e.target.innerHTML = diceSum
+      dispatch(tableActions.updateCellData(e.target.id))
    }
 
   return (
@@ -22,57 +25,51 @@ const TableRow = ({ rowType, rowValue, sum }) => {
       <th>{rowValue}</th>
       <td>
          <div>
-            <p 
+            <button 
                id={CELL_I_ID}
                onClick={onClickGetIdHandler}
-               disabled={sum}
             >
-            </p>
+            </button>
          </div>
       </td>
       <td>
          <div>
-            <p 
+            <button 
                id={CELL_II_ID}
                onClick={onClickGetIdHandler}
-               disabled={sum}
-            ></p>
+            ></button>
          </div>
       </td>
       <td>
          <div>
-            <p 
+            <button 
                id={CELL_III_ID}
                onClick={onClickGetIdHandler}
-               disabled={sum}
-            ></p>
+            ></button>
          </div>
       </td>
       <td>
          <div>
-            <p 
+            <button
                id={CELL_IV_ID}
                onClick={onClickGetIdHandler}
-               disabled={sum}
-            ></p>
+            ></button>
          </div>
       </td>
       <td>
          <div>
-            <p 
+            <button
                id={CELL_V_ID}
                onClick={onClickGetIdHandler}
-               disabled={sum}
-            ></p>
+            ></button>
          </div>
       </td>
       <td>
          <div>
-            <p 
+            <button
                id={CELL_VI_ID}
                onClick={onClickGetIdHandler}
-               disabled={sum}
-            ></p>
+            ></button>
          </div>
       </td>
    </tr>

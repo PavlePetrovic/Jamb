@@ -12,10 +12,12 @@ const Dice = () => {
 
    useEffect(() => {
       dispatch(tableActions.updateDiceNumbers())
-   }, [])
+   }, [dispatch])
 
-   const showDice = diceNumbers.map( (value, i) => {
-      return <Die key={i} num={value} />
+   const showDice = diceNumbers.map(die => {
+      return (
+         <Die key={die.id} id={die.id} num={die.value} hold={die.picked} />
+      )
    }) 
 
    const onRollDicesHandle = () => {

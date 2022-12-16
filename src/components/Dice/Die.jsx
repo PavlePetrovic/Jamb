@@ -8,6 +8,7 @@ const Die = ({ num, id, hold }) => {
 
   const holdDieHandle = (e) => {
     dispatch(tableActions.holdDice(e.target.id))
+    dispatch(tableActions.getDiceSum())
   } 
 
   return (

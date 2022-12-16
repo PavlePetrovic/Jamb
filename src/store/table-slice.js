@@ -45,10 +45,28 @@ const tableSlice = createSlice({
          })
       },
       getDiceSum(state) {
-         // startingValue is what we passed as second argumend of reduce() js method -> 0
-         const sum = state.diceNumbers.reduce((startingValue, iterateValue) => {
-            return startingValue + iterateValue.value
-         }, 0)
+         let anyDiceIsHold = false
+         
+         state.diceNumbers.forEach(num => {
+            if (num.picked === true) {
+               anyDiceIsHold = true
+            }
+         })
+
+         let sum = null
+         
+         if (anyDiceIsHold) {
+            state.diceNumbers.forEach(num => {
+               if (num.picked === true) {
+                  sum = sum + num.value
+               }
+            })
+         } else {
+            // startingValue is what we passed as second argumend of reduce() js method -> 0
+            sum = state.diceNumbers.reduce((startingValue, iterateValue) => {
+               return startingValue + iterateValue.value
+            }, 0)
+         }
 
          state.diceSum = sum
       }

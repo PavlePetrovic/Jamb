@@ -29,8 +29,11 @@
       width: 100%;
       cursor: pointer;
    }
+}
 
-   .roll-counter {
-      text-align: center;
-   }
+.roll-counter {
+   margin-top: 8px;
+   text-align: center;
+   color: red;
+   font-size: 12.5px;
 }

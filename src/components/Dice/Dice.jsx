@@ -43,8 +43,8 @@ const Dice = () => {
        >
             Roll
        </button>
-       <p className={styles['roll-counter']}>Roll Counter: {rollCounter - 1}</p>
     </div>
+    <p className={styles['roll-counter']}>Roll Counter: {rollCounter - 1}</p>
    </>
   )
 }

@@ -6,6 +6,7 @@ import styles from './TableRow.module.scss'
 const TableRow = ({ rowType, rowValue, sum }) => {
    const dispatch = useDispatch()
    const diceSum = useSelector(state => state.tableData.diceSum)
+   const cellFilled = useSelector(state => state.tableData.cellFilled)
 
    const CELL_I_ID = 'colDownRow' + rowType
    const CELL_II_ID = 'colUpDownRow' + rowType
@@ -15,9 +16,12 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    const CELL_VI_ID = 'colHandRow' + rowType
 
    const onClickGetIdHandler = (e) => {
-      e.target.disabled = true
-      e.target.innerHTML = diceSum
-      dispatch(tableActions.updateCellData(e.target.id))
+      if (!cellFilled) {
+         e.target.disabled = true
+         e.target.innerHTML = diceSum
+         dispatch(tableActions.updateCellData(e.target.id))
+         dispatch(tableActions.cellFilledHandler(true))
+      }
    }
 
   return (

@@ -24,6 +24,7 @@ const Dice = () => {
    const onRollDicesHandle = () => {
       dispatch(tableActions.updateDiceNumbers())
       dispatch(tableActions.getDiceSum())
+      dispatch(tableActions.cellFilledHandler(false))
    }
 
   return (
@@ -38,7 +39,7 @@ const Dice = () => {
        <button 
          className={styles['roll-btn']}
          onClick={onRollDicesHandle}
-         disabled={rollCounter >= 3}
+         disabled={rollCounter >= 4}
        >
             Roll
        </button>

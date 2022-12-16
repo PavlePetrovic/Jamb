@@ -17,7 +17,8 @@ const tableSlice = createSlice({
       gameData: data,
       diceNumbers: diceNumbersData,
       diceSum: null,
-      diceRollCount: 0
+      diceRollCount: 0,
+      cellFilled: false
    },
    reducers: {
       updateCellData(state, action) {
@@ -29,7 +30,7 @@ const tableSlice = createSlice({
             activeCell.changed = true
          }
 
-         state.diceRollCount = 0
+         state.diceRollCount = 1
       },
       updateDiceNumbers(state) {
          state.diceNumbers.forEach(die => {
@@ -37,6 +38,13 @@ const tableSlice = createSlice({
                die.value = Math.floor(Math.random() * 6) + 1
             }
          })
+
+         if (state.diceRollCount <= 4) {
+            state.diceRollCount = state.diceRollCount + 1
+         }
+      },
+      cellFilledHandler(state, action) {
+         state.cellFilled = action.payload
       },
       holdDice(state, action) {
          const pickedDieId = action.payload
@@ -72,10 +80,6 @@ const tableSlice = createSlice({
          }
 
          state.diceSum = sum
-
-         if (state.diceRollCount < 3) {
-            state.diceRollCount = state.diceRollCount + 1
-         }
       }
    }
 })

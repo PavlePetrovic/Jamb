@@ -16,7 +16,8 @@ const tableSlice = createSlice({
    initialState: {
       gameData: data,
       diceNumbers: diceNumbersData,
-      diceSum: null
+      diceSum: null,
+      diceRollCount: 0
    },
    reducers: {
       updateCellData(state, action) {
@@ -27,6 +28,8 @@ const tableSlice = createSlice({
             activeCell.value = state.diceSum
             activeCell.changed = true
          }
+
+         state.diceRollCount = 0
       },
       updateDiceNumbers(state) {
          state.diceNumbers.forEach(die => {
@@ -69,6 +72,10 @@ const tableSlice = createSlice({
          }
 
          state.diceSum = sum
+
+         if (state.diceRollCount < 3) {
+            state.diceRollCount = state.diceRollCount + 1
+         }
       }
    }
 })

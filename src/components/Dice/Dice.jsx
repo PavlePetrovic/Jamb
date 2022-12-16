@@ -9,6 +9,7 @@ const Dice = () => {
    const dispatch = useDispatch()
    const diceNumbers = useSelector(state => state.tableData.diceNumbers)
    const diceSum = useSelector(state => state.tableData.diceSum)
+   const rollCounter = useSelector(state => state.tableData.diceRollCount)
 
    useEffect(() => {
       dispatch(tableActions.updateDiceNumbers())
@@ -37,6 +38,7 @@ const Dice = () => {
        <button 
          className={styles['roll-btn']}
          onClick={onRollDicesHandle}
+         disabled={rollCounter >= 3}
        >
             Roll
        </button>

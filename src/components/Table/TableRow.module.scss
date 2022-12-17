@@ -1,4 +1,12 @@
+@import '../../style/cell';
+@import '../../style/colors';
+
 tr {
+   .row-sign {
+      color: $white;
+      background-color: $yellow;
+      font-weight: 700;
+   }
    td {
       div {
          display: flex;
@@ -6,16 +14,23 @@ tr {
          align-items: center;
          
          button {
-            height: 30px;
-            width: 50px;
+            height: 27px;
+            width: 45px;
             border: none;
             background-color: transparent;
+            border-radius: $cell-radius;
+            &:disabled {
+               // box-shadow: inset 0px -11px 8px -13px black; 
+               color: black
+            }
          }
       }
    }
 }
 
 .table-row-sum {
+   display: none;
+
    th {
       background-color: rgb(190, 190, 190);
    }
@@ -24,6 +39,7 @@ tr {
       div {
          button {
             background-color: rgb(190, 190, 190);
+            border-radius: $cell-radius;
          }
       }
    }

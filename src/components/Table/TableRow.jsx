@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { tableActions } from '../../store/table-slice';
+import SumRowHolder from './SumRowHolder'
 import styles from './TableRow.module.scss'
 
 const TableRow = ({ rowType, rowValue, sum }) => {
@@ -25,8 +26,8 @@ const TableRow = ({ rowType, rowValue, sum }) => {
    }
 
   return (
-   <tr className={sum ? styles['table-row-sum'] : ''}>
-      <th>{rowValue}</th>
+   (!sum ? <tr className={sum ? styles['table-row-sum'] : ''}>
+      <th className={styles['row-sign']}>{rowValue}</th>
       <td>
          <div>
             <button 
@@ -83,6 +84,8 @@ const TableRow = ({ rowType, rowValue, sum }) => {
          </div>
       </td>
    </tr>
+   :
+   <SumRowHolder />)
   )
 }
 

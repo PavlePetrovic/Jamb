@@ -1,6 +1,8 @@
-import { BsArrowsExpand, BsArrowBarDown, BsArrowBarUp } from 'react-icons/bs'
-import { TbLetterN, TbLetterO, TbLetterR } from 'react-icons/tb'
-import { FaDiceD6 } from 'react-icons/fa'
+import { TbStairsDown, TbStairsUp, TbStairs } from 'react-icons/tb'
+import { FaTrash } from 'react-icons/fa'
+import { IoMdCall } from 'react-icons/io'
+import { MdBackHand } from 'react-icons/md'
+import { GiRollingDices } from 'react-icons/gi'
 
 import styles from './TableHead.module.scss'
 
@@ -10,37 +12,37 @@ const TableHead = () => {
       <tr>
         <th>
           <div className={styles['th-aligner']}>
-            <FaDiceD6 />
+            <GiRollingDices className={styles['header-icon-logo']}/>
           </div>
         </th>
         <th>
           <div className={styles['th-aligner']}>
-            <BsArrowBarDown />
+            <TbStairsDown className={styles['header-icon']}/>
           </div>
         </th>
         <th>
           <div className={styles['th-aligner']}>
-            <BsArrowsExpand />
+            <TbStairs className={styles['header-icon']}/>
           </div>
         </th>
         <th>
           <div className={styles['th-aligner']}>
-            <BsArrowBarUp />  
+            <TbStairsUp className={styles['header-icon']}/>  
           </div>
         </th>
         <th>
           <div className={styles['th-aligner']}>
-            <TbLetterN />
+            <IoMdCall className={styles['header-icon']}/>
           </div>
         </th>
         <th>
           <div className={styles['th-aligner']}>
-            <TbLetterO />
+            <FaTrash className={styles['header-icon']}/>
           </div>
         </th>
         <th>
           <div className={styles['th-aligner']}>
-            <TbLetterR />
+            <MdBackHand className={styles['header-icon']}/>
           </div>
         </th>
       </tr>

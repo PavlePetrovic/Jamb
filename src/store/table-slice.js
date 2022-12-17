@@ -32,6 +32,7 @@ const tableSlice = createSlice({
 
          state.diceRollCount = 1
          state.diceNumbers.forEach(die => die.picked = false)
+         state.diceSum = null
       },
       updateDiceNumbers(state) {
          state.diceNumbers.forEach(die => {

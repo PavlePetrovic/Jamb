@@ -1,3 +1,5 @@
+@import '../../style/colors';
+
 .die {
    display: flex;
    flex-direction: row;
@@ -7,6 +9,8 @@
    border-radius: 6px;
    width: 40px;
    height: 40px;
+   background-color: $red;
+   color: $white;
 }
 
 .picked-die {
@@ -18,6 +22,6 @@
    border-radius: 6px;
    width: 40px;
    height: 40px;
-   background-color: tomato;
-   color: white;
+   background-color: #2195f363;
+   color: $white;
 }

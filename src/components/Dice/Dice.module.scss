@@ -6,34 +6,49 @@
 
 .roll-btn-div {
    position: relative;
-   width: 60px; // btn width
+   width: 80px; // btn width
+   margin-top: 15px;
+   box-shadow: 0px 0px 10px -3px rgba(0,0,0,1);
 
    .dice-sum {
       position: absolute;
-      top: 7px;
-      right: -7px;
+      top: -8px;
+      right: -8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: tomato;
+      background-color: #2196F3;
       color: white;
       border-radius: 50px;
-      font-size: 12px;
+      font-size: 11px;
       width: 20px;
       height: 20px;
    }
 
    .roll-btn {
-      margin-top: 15px;
-      padding-block: 5px;
+      padding-block: 7px;
       width: 100%;
       cursor: pointer;
+      border: solid 1px transparent;
+      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg,#2196F3, #FCB61D, #AE2029);      
+      background-origin: border-box;
+      box-shadow: 2px 1000px 1px #fff inset;
+      border-radius: 5px;
+      color: #2196F3;
+      &:disabled {
+         background-image: none;
+         background-origin: initial;
+         box-shadow: none;
+         border: 1px solid #AE2029;
+         color: #AE2029;
+         background-color: white;
+      }
    }
 }
 
 .roll-counter {
    margin-top: 8px;
    text-align: center;
-   color: red;
+   color: #2196F3;
    font-size: 12.5px;
 }

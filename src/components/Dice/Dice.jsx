@@ -49,7 +49,13 @@ const Dice = () => {
        >
             {rollCounter - 1 === 0 ? 'Roll' : `Roll ${rollCounter - 1}`}
        </button>}
-       {gameOver && <button onClick={endGame}>{endSum ? endSum : 'Finish Game'}</button>}
+       {gameOver && (
+         <button 
+            className={endSum ? styles['game-over-btn'] : styles['finish-btn']} 
+            onClick={endGame}>
+            {endSum ? endSum : 'Finish?'}
+         </button>
+       )}
     </div>
    </>
   )

@@ -44,11 +44,25 @@
          background-color: white;
       }
    }
-}
 
-.roll-counter {
-   margin-top: 8px;
-   text-align: center;
-   color: #2196F3;
-   font-size: 12.5px;
+   .finish-btn {
+      padding-block: 7px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: #86B049;
+      color: white;
+      border: none;
+      font-weight: 700;
+   }
+
+   .game-over-btn {
+      padding-block: 7px;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 5px;
+      background-color: #AE2029;
+      color: white;
+      border: none;
+   }
 }

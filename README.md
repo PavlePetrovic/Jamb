@@ -20,6 +20,7 @@ I tried to create an online version of the Jamb board game. The main goal of thi
 
 ## To do
 
+- [ ] Add Finish btn and calculate final numbers sum
 - [ ] Add log in form
 - [ ] Add authentication
 - [ ] Connect with Firebase

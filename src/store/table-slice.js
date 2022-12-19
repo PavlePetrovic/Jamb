@@ -19,7 +19,8 @@ const tableSlice = createSlice({
       diceSum: null,
       diceRollCount: 0,
       cellFilled: false,
-      endSum: null
+      endSum: null,
+      gameOver: false
    },
    reducers: {
       updateCellData(state, action) {
@@ -158,6 +159,15 @@ const tableSlice = createSlice({
          for (let sum in sumArr) {
             state.endSum = state.endSum + sumArr[sum]
          }
+      },
+      isGameOverHandler(state) {
+         let isItOver = true
+         state.gameData.forEach(cell => {
+            if (cell.value === null) {
+               isItOver = false
+            }
+         })
+         state.gameOver = isItOver
       }
    }
 })

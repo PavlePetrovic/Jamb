@@ -11,7 +11,6 @@ function App() {
     <div className={styles.App}>
       <Table />
       <Dice />
-      <End />
     </div>
     </>
   );

@@ -22,6 +22,7 @@ const TableRow = ({ rowType, rowValue, sum }) => {
          e.target.innerHTML = diceSum
          dispatch(tableActions.updateCellData(e.target.id))
          dispatch(tableActions.cellFilledHandler(true))
+         dispatch(tableActions.isGameOverHandler())
       }
    }
 

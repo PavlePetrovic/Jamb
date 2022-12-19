@@ -10,6 +10,8 @@ const Dice = () => {
    const diceNumbers = useSelector(state => state.tableData.diceNumbers)
    const diceSum = useSelector(state => state.tableData.diceSum)
    const rollCounter = useSelector(state => state.tableData.diceRollCount)
+   const endSum = useSelector(state => state.tableData.endSum)
+   const gameOver = useSelector(state => state.tableData.gameOver)
 
    useEffect(() => {
       dispatch(tableActions.updateDiceNumbers())
@@ -27,6 +29,10 @@ const Dice = () => {
       dispatch(tableActions.cellFilledHandler(false))
    }
 
+   const endGame = () => {
+      dispatch(tableActions.endGame())
+   }
+
   return (
    <>
     <div className={styles['dice-box']}>
@@ -36,15 +42,15 @@ const Dice = () => {
        <p className={diceSum ? styles['dice-sum'] : ''}>
          {diceSum ? diceSum : ''}
        </p>
-       <button 
+       {!gameOver && <button 
          className={styles['roll-btn']}
          onClick={onRollDicesHandle}
          disabled={rollCounter >= 4}
        >
-            Roll
-       </button>
+            {rollCounter - 1 === 0 ? 'Roll' : `Roll ${rollCounter - 1}`}
+       </button>}
+       {gameOver && <button onClick={endGame}>{endSum ? endSum : 'Finish Game'}</button>}
     </div>
-    <p className={styles['roll-counter']}>Roll Counter: {rollCounter - 1}</p>
    </>
   )
 }

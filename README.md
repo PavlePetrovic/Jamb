@@ -2,7 +2,7 @@
 
 Jamb is a classy game but on the web
 
-Take a look: [Coming soon](##)
+Take a look: [Jumb site](https://jambproject.netlify.app/)
 
 ## General info
 

@@ -17,3 +17,11 @@ I tried to create an online version of the Jamb board game. The main goal of thi
 * Redux-toolkit
 * Firebase (soon)
 * Google fonts
+
+## To do
+
+- [ ] Add log in form
+- [ ] Add authentication
+- [ ] Connect with Firebase
+- [ ] Add multiplayer feature
+- [ ] Add protected game rooms

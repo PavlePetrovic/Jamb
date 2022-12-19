@@ -1,3 +1,5 @@
+@import '../../style/colors';
+
 .dice-box {
    display: flex;
    gap: 10px;
@@ -17,8 +19,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #2196F3;
-      color: white;
+      background-color: $blue;
+      color: $white;
       border-radius: 50px;
       font-size: 11px;
       width: 20px;
@@ -30,18 +32,18 @@
       width: 100%;
       cursor: pointer;
       border: solid 1px transparent;
-      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg,#2196F3, #FCB61D, #AE2029);      
+      background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg,$blue, $yellow, $red);      
       background-origin: border-box;
       box-shadow: 2px 1000px 1px #fff inset;
       border-radius: 5px;
-      color: #2196F3;
+      color: $blue;
       &:disabled {
          background-image: none;
          background-origin: initial;
          box-shadow: none;
-         border: 1px solid #AE2029;
-         color: #AE2029;
-         background-color: white;
+         border: 1px solid $red;
+         color: $red;
+         background-color: $white;
       }
    }
 
@@ -50,8 +52,8 @@
       width: 100%;
       cursor: pointer;
       border-radius: 5px;
-      background-color: #86B049;
-      color: white;
+      background-color: $green;
+      color: $white;
       border: none;
       font-weight: 700;
    }
@@ -61,8 +63,8 @@
       width: 100%;
       cursor: pointer;
       border-radius: 5px;
-      background-color: #AE2029;
-      color: white;
+      background-color: $red;
+      color: $white;
       border: none;
    }
 }

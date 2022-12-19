@@ -128,7 +128,6 @@ const tableSlice = createSlice({
             maxMinSum = one.value * (max.value - min.value)
 
             for (let num in specials) {
-               console.log(specials[num].id.includes('Triling'));
                if (specials[num].value === null && specials[num].id.includes('Triling')) {
                   specialsSum = specialsSum - trilingBonus
                } else if (specials[num].value === null && specials[num].id.includes('Kenta')) {

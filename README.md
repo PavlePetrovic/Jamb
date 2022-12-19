@@ -2,7 +2,7 @@
 
 Jamb is a classy game but on the web
 
-Take a look: [Coming soon](#)
+Take a look: [Coming soon](##)
 
 ## General info
 

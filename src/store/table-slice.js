@@ -18,7 +18,8 @@ const tableSlice = createSlice({
       diceNumbers: diceNumbersData,
       diceSum: null,
       diceRollCount: 0,
-      cellFilled: false
+      cellFilled: false,
+      endSum: null
    },
    reducers: {
       updateCellData(state, action) {
@@ -82,6 +83,82 @@ const tableSlice = createSlice({
          }
 
          state.diceSum = sum
+      },
+      endGame(state) {
+         const colIds = ['colDown', 'colUpDown', 'colUp', 'colAnnounce', 'colRandom', 'colHand']
+
+         const sumArr = []
+
+         for (let col in colIds) {
+            let sum = null
+
+            const one = state.gameData.find(colData => colData.id === `${colIds[col]}RowOne`)
+            const two = state.gameData.find(colData => colData.id === `${colIds[col]}RowTwo`)
+            const three = state.gameData.find(colData => colData.id === `${colIds[col]}RowThree`)
+            const four = state.gameData.find(colData => colData.id === `${colIds[col]}RowFour`)
+            const five = state.gameData.find(colData => colData.id === `${colIds[col]}RowFive`)
+            const six = state.gameData.find(colData => colData.id === `${colIds[col]}RowSix`)
+            const max = state.gameData.find(colData => colData.id === `${colIds[col]}RowMax`)
+            const min = state.gameData.find(colData => colData.id === `${colIds[col]}RowMin`)
+            const triling = state.gameData.find(colData => colData.id === `${colIds[col]}RowTriling`)
+            const kenta = state.gameData.find(colData => colData.id === `${colIds[col]}RowKenta`)
+            const full = state.gameData.find(colData => colData.id === `${colIds[col]}RowFull`)
+            const poker = state.gameData.find(colData => colData.id === `${colIds[col]}RowPoker`)
+            const jamb = state.gameData.find(colData => colData.id === `${colIds[col]}RowJamb`)
+
+            const oneToSix = [one, two, three, four, five, six]
+            const specials = [triling, kenta, full, poker, jamb]
+
+            const trilingBonus = 20
+            const kentaBonus = 50
+            const fullBonus = 30
+            const pokerBonus = 40
+            const jambBonus = 50
+
+            const bonusSum = trilingBonus + kentaBonus + fullBonus + pokerBonus + jambBonus
+
+            let oneToSixSum = null
+            let maxMinSum = null
+            let specialsSum = bonusSum
+            
+            for (let num in oneToSix) {
+               oneToSixSum = oneToSixSum + oneToSix[num].value
+            }
+
+            maxMinSum = one.value * (max.value - min.value)
+
+            for (let num in specials) {
+               console.log(specials[num].id.includes('Triling'));
+               if (specials[num].value === null && specials[num].id.includes('Triling')) {
+                  specialsSum = specialsSum - trilingBonus
+               } else if (specials[num].value === null && specials[num].id.includes('Kenta')) {
+                  specialsSum = specialsSum - kentaBonus
+               } else if (specials[num].value === null && specials[num].id.includes('Full')) {
+                  specialsSum = specialsSum - fullBonus
+               } else if (specials[num].value === null && specials[num].id.includes('Poker')) {
+                  specialsSum = specialsSum - pokerBonus
+               } else if (specials[num].value === null && specials[num].id.includes('Jamb')) {
+                  specialsSum = specialsSum - jambBonus
+               } else {
+                  specialsSum = specialsSum + specials[num].value
+               }
+            }
+
+            if (oneToSixSum > 60) {
+               oneToSixSum = oneToSixSum + 30
+            }
+            if (maxMinSum > 60) {
+               maxMinSum = maxMinSum + 60
+            }
+
+            sum = oneToSixSum + maxMinSum + specialsSum
+
+            sumArr.push(sum)
+         }
+
+         for (let sum in sumArr) {
+            state.endSum = state.endSum + sumArr[sum]
+         }
       }
    }
 })
